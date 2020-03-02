@@ -17,11 +17,11 @@ class FormsAndInputs extends Component {
       [event.target.name]: event.target.value
     });
   };
-  // componentDidMount() {
-  //   this.setState({
-  //     fullName: "Justin"
-  //   });
-  // }
+  componentDidMount() {
+    this.setState({
+      fullName: "Justin"
+    });
+  }
   render() {
     const { fullName } = this.state;
 
