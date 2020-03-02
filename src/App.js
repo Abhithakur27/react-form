@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class FormsAndInputs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fullName: "abhishek thakur"
+    };
+  }
+  handleSubmit = event => {
+    event.preventDefault();
+    const data = this.state;
+    console.log(data);
+  };
+  handleInputChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  // componentDidMount() {
+  //   this.setState({
+  //     fullName: "Justin"
+  //   });
+  // }
+  render() {
+    const { fullName } = this.state;
+
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <h1>Forms and Inputs</h1>
+          <p>Full name is: {fullName}</p>
+          <input
+            type="text"
+            placeholder="Your name"
+            name="fullName"
+            value={fullName}
+            onChange={this.state.handleInputChange}
+          ></input>
+          <button>Send</button>
+        </form>
+      </div>
+    );
+  }
 }
-
-export default App;
+export default FormsAndInputs;
