@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Register from "./register/Register";
 import "bootstrap/dist/css/bootstrap.min.css";
+import SignUp from "../src/Signup/Signup";
+import Signup from "../src/Signup/Signup";
 
 class FormsAndInputs extends Component {
   // constructor(props) {
@@ -52,6 +54,7 @@ class FormsAndInputs extends Component {
           <button>Send</button>
         </form> */}
         <Register />
+        <Signup />
       </div>
     );
   }

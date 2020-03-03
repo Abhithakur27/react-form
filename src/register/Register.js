@@ -11,6 +11,7 @@ export default class Register extends Component {
 
   handleChange = e => {
     console.log(e.target.value);
+
     this.setState({
       email: e.target.value
     });
@@ -39,9 +40,6 @@ export default class Register extends Component {
               aria-describedby="emailHelp"
               onChange={this.handleChange}
             />
-            <small id="emailHelp" className="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
           </div>
           <div className="form-group">
             <label for="exampleInputPassword1">Password</label>
