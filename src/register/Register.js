@@ -4,7 +4,8 @@ export default class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ""
+      email: "",
+      pass: ""
     };
   }
 
@@ -15,7 +16,14 @@ export default class Register extends Component {
     });
   };
   passChange = e => {
-    console.log(e.target);
+    console.log(e.target.value);
+    this.setState({
+      pass: e.target.value
+    });
+  };
+  addSubmit = e => {
+    e.preventDefault();
+    console.log(e.target.addSubmit);
   };
   render() {
     return (
@@ -25,7 +33,7 @@ export default class Register extends Component {
             <label for="exampleInputEmail1">Email address</label>
             <input
               type="email"
-              value={this.state.email} //read the stored value from state
+              value={this.state.email}
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
@@ -39,6 +47,7 @@ export default class Register extends Component {
             <label for="exampleInputPassword1">Password</label>
             <input
               type="password"
+              value={this.state.pass}
               className="form-control"
               id="exampleInputPassword1"
               onChange={this.passChange}
@@ -54,7 +63,11 @@ export default class Register extends Component {
               Check me out
             </label>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={this.addSubmit}
+          >
             Submit
           </button>
         </form>
