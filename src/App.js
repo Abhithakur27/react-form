@@ -3,6 +3,7 @@ import Register from "./register/Register";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUp from "../src/Signup/Signup";
 import Signup from "../src/Signup/Signup";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class FormsAndInputs extends Component {
   // constructor(props) {
@@ -36,25 +37,19 @@ class FormsAndInputs extends Component {
   // };
 
   render() {
-    // const { fullName } = this.state;
-    // console.log(fullName);
-
     return (
       <div>
-        {/* <form onSubmit={this.handleSubmit}>
-          <h1>Forms and Inputs</h1>
-          <p>Full name is: {fullName}</p>
-          <input
-            type="text"
-            placeholder="Your name"
-            name="fullName"
-            value={fullName}
-            onChange={this.handlefullName}
-          ></input>
-          <button>Send</button>
-        </form> */}
-        <Register />
-        <Signup />
+        <Router>
+          {/* <Register /> */}
+          <Switch>
+            <Route exact path="/">
+              <Signup />
+            </Route>
+            <Route exact path="/login">
+              <Register />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

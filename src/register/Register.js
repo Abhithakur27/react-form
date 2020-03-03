@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Register extends Component {
   constructor(props) {
@@ -28,7 +29,10 @@ export default class Register extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="container">
+        <button>
+          <Link to="/">Home</Link>
+        </button>
         <form>
           <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
